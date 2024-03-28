@@ -48,6 +48,7 @@ public class Player extends Entity {
 
     public void update() {
 
+        //So spriteCounter does not increase when not pressing anything (no image changes when still)
         if (keyH.downPressed || keyH.upPressed || keyH.rightPressed || keyH.leftPressed) {
 
             if (keyH.upPressed == true) {
