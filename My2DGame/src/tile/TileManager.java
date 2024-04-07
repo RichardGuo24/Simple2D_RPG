@@ -14,12 +14,12 @@ public class TileManager {
 
     //Have tiles and display them somehow
 
-    GamePanel gp;
-    Tile[] tile;
+    private GamePanel gp;
+    public Tile[] tile;
 
 
     //Array for mapTiles
-    int[][] mapTileNum;
+    public int[][] mapTileNum;
 
     public TileManager(GamePanel gp){
         this.gp = gp;
@@ -41,11 +41,12 @@ public class TileManager {
             //wall
             tile[1] = new Tile();
             tile[1].image = ImageIO.read(getClass().getResourceAsStream("/res/tiles/wall.png"));
-
+            tile[1].collision = true;
 
             //water
             tile[2] = new Tile();
             tile[2].image = ImageIO.read(getClass().getResourceAsStream("/res/tiles/water.png"));
+            tile[2].collision = true;
 
             //earth
             tile[3] = new Tile();
@@ -54,6 +55,7 @@ public class TileManager {
             //tree
             tile[4] = new Tile();
             tile[4].image = ImageIO.read(getClass().getResourceAsStream("/res/tiles/tree.png"));
+            tile[4].collision = true;
 
             //sand
             tile[5] = new Tile();
