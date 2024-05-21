@@ -18,6 +18,8 @@ public class Player extends Entity {
     public final int screenX;
     public final int screenY;
 
+    private int hasKey = 0;
+
     public Player(GamePanel input_gP, KeyHandler input_keyH) {
         this.gp = input_gP;
         this.keyH = input_keyH;
@@ -25,8 +27,13 @@ public class Player extends Entity {
         screenX = gp.screenWidth / 2 - (gp.tileSize / 2);
         screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
 
+
+
         //so it scales
         solidArea = new Rectangle((int) (1.0/6 * gp.tileSize), (int) (1.0/3 * gp.tileSize), (int) (2.0/3 * gp.tileSize), (int) (2.0/3 * gp.tileSize));
+        
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
 
         SetMainValues();
         getPlayerImage();
@@ -35,7 +42,7 @@ public class Player extends Entity {
     public void SetMainValues() {
         worldX = 23 * gp.tileSize;
         worldY = 21 * gp.tileSize;
-        speed = 4;
+        speed = 6;
         direction = "down";
     }
 
@@ -73,6 +80,9 @@ public class Player extends Entity {
             collisionOn = false;
             gp.cChecker.CheckTile(this);
 
+            int objIndex = gp.cChecker.checkObject(this, true);
+            pickUpObject(objIndex);
+
             if(collisionOn == false){
 
                 switch(direction){
@@ -105,6 +115,30 @@ public class Player extends Entity {
 
             
 
+        }
+    }
+
+    public void pickUpObject(int i){
+        if(i != 2000000000){
+            String objectName = gp.obj[i].name;
+
+            switch(objectName){
+                case "Key":
+                    hasKey++;
+                    System.out.println("Key: " + hasKey);
+                    gp.obj[i] = null;
+                    break;
+                case "Door":
+                    if(hasKey > 0){
+                        System.out.println("Door has opened!");
+                        gp.obj[i] = null;
+                        hasKey--;
+                    }else{
+                        System.out.println("Not enough keys!");
+                    }
+                    System.out.println("Key: " + hasKey);
+                    break;
+            }
         }
     }
 
