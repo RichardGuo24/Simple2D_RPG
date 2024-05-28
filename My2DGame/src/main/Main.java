@@ -9,7 +9,7 @@ public class Main {
 
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
-        window.setTitle("My 2D Game");
+        window.setTitle("The Ohio Sigma: Lawrence Mi");
 
 
         GamePanel gamePanel = new GamePanel();

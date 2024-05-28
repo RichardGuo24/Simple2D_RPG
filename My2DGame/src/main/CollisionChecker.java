@@ -72,6 +72,8 @@ public class CollisionChecker {
         }
     }
 
+    //No clue how this shit works
+
     public int checkObject(Entity entity, boolean player){
         int index = 2000000000;
 
@@ -81,6 +83,7 @@ public class CollisionChecker {
                 //entity solid area position
                 entity.solidArea.x = entity.worldX + entity.solidArea.x;
                 entity.solidArea.y = entity.worldY + entity.solidArea.y;
+
 
                 //object solid area position
                 gp.obj[i].solidArea.x = gp.obj[i].worldX + gp.obj[i].solidArea.x;

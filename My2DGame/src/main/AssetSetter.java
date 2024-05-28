@@ -1,8 +1,10 @@
 package main;
 
 import object.OBJ_Chest;
+import object.OBJ_Cindy;
 import object.OBJ_Door;
 import object.OBJ_Key;
+import object.OBJ_Lawrencemi;
 
 public class AssetSetter {
 
@@ -39,8 +41,20 @@ public class AssetSetter {
         gp.obj[5].worldY = 11 * gp.tileSize;
 
         gp.obj[6] = new OBJ_Chest();
-        gp.obj[6].worldX = 10 * gp.tileSize;
+        gp.obj[6].worldX = 11 * gp.tileSize;
         gp.obj[6].worldY = 7 * gp.tileSize;
+
+
+        //Change these
+
+        gp.obj[7] = new OBJ_Lawrencemi();
+        gp.obj[7].worldX = 9 * gp.tileSize;
+        gp.obj[7].worldY = 7 * gp.tileSize;
+
+        gp.obj[8] = new OBJ_Cindy();
+        gp.obj[8].worldX = 30 * gp.tileSize;
+        gp.obj[8].worldY = 37 * gp.tileSize;
     }
+    
 
 }
