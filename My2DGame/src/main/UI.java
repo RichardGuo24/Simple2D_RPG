@@ -29,7 +29,7 @@ public class UI {
         //Creates a new font instance that is arial, plain and size 40
         arial_40 = new Font("Arial",Font.PLAIN, 40);
         arial_80B = new Font("Arial",Font.BOLD, 65);
-        OBJ_Key key = new OBJ_Key();
+        OBJ_Key key = new OBJ_Key(gp);
         keyImage = key.image;
 
     }
@@ -82,7 +82,7 @@ public class UI {
 
             //TIME
             playTime += (double) 1/60;
-            g2.drawString("Time: " + dFormat.format(playTime), gp.tileSize * 11, 65);
+            g2.drawString("Time: " + dFormat.format(playTime), gp.tileSize * 15, 65);
 
             if(messageOn){
                 g2.setFont(g2.getFont().deriveFont(30F));

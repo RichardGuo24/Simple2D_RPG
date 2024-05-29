@@ -17,8 +17,8 @@ public class GamePanel extends JPanel implements Runnable{
     final int scale = 3;
 
     public final int tileSize = originalTileSize * scale; // 48x48 pixels per tile
-    public final int maxScreenCol = 16;
-    public final int maxScreenRow = 12;
+    public final int maxScreenCol = 20;
+    public final int maxScreenRow = 14;
     public final int screenWidth = tileSize * maxScreenCol;
     public final int screenHeight = tileSize * maxScreenRow;
 
@@ -76,12 +76,6 @@ public class GamePanel extends JPanel implements Runnable{
         long lastTime = System.nanoTime();
         double delta = 0;
         long currentTime;
-
-        //For diplaying FPS
-        /* 
-        long timer = 0;
-        int drawCount = 0;
-        */
         
         while(gameThread != null){
 
@@ -89,9 +83,6 @@ public class GamePanel extends JPanel implements Runnable{
             
             //Basically calculates nano seconds between each from and divides it by number of nanoseconds I want in between each frame
             delta += (currentTime - lastTime) / drawInterval;
-
-            //for FPS
-            //timer += (currentTime - lastTime);
 
             lastTime = currentTime;
 
@@ -104,19 +95,8 @@ public class GamePanel extends JPanel implements Runnable{
 
                 delta = 0;
 
-                //For FPS
-                //drawCount++;
             }
 
-            //For displaying FPS
-            /* 
-            if(timer >= 1000000000){
-                System.out.println("FPS: " + drawCount);
-                drawCount = 0;
-                timer = 0;
-            }
-            */
-            
         }
 
     }
