@@ -1,5 +1,6 @@
 package entity;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -31,7 +32,7 @@ public class Player extends Entity {
 
 
         //so it scales
-        solidArea = new Rectangle((int) (1.0/6 * gp.tileSize), (int) (1.0/3 * gp.tileSize), (int) (2.0/3 * gp.tileSize), (int) (2.0/3 * gp.tileSize));
+        solidArea = new Rectangle((int) (1.0/4 * gp.tileSize), (int) (1.0/4 * gp.tileSize), (int) (2.0/4 * gp.tileSize), (int) (2.0/3 * gp.tileSize));
         
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
@@ -49,15 +50,25 @@ public class Player extends Entity {
 
     public void getPlayerImage() {
 
+        //up1 = setup("boy_up_1");
+        //up2 = setup("boy_up_2");
+        //down1 = setup("boy_down_1");
+        //down2 = setup("boy_down_2");
+        //right1 = setup("boy_right_1");
+        //right2 = setup("boy_right_2");
+        //left1 = setup("boy_left_1");
+        //left2 = setup("boy_left_2");
         
-        up1 = setup("boy_up_1");
-        up2 = setup("boy_up_2");
-        down1 = setup("boy_down_1");
-        down2 = setup("boy_down_2");
-        right1 = setup("boy_right_1");
-        right2 = setup("boy_right_2");
-        left1 = setup("boy_left_1");
-        left2 = setup("boy_left_2");
+        
+        up1 = setup("up1");
+        up2 = setup("up2");
+        down1 = setup("down1");
+        down2 = setup("down2");
+        right1 = setup("right1");
+        right2 = setup("right2");
+        left1 = setup("left1");
+        left2 = setup("left2");
+        
         
 
     }
@@ -202,5 +213,11 @@ public class Player extends Entity {
         }
 
         g2.drawImage(image, screenX, screenY,null);
+
+        //JUST FOR SEEING THE HIT BOX
+        /*
+        g2.setColor(Color.RED); // Set the color to red or any other color you prefer
+        g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
+        */
     }
 }

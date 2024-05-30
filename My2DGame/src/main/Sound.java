@@ -16,8 +16,8 @@ public class Sound {
         soundURL[0] = getClass().getResource("/res/sound/minecraft4.wav");
         soundURL[1] = getClass().getResource("/res/sound/coin.wav");
         soundURL[2] = getClass().getResource("/res/sound/powerup.wav");
-        soundURL[3] = getClass().getResource("/res/sound/unlock.wav");
-        soundURL[4] = getClass().getResource("/res/sound/fanfare.wav");
+        soundURL[3] = getClass().getResource("/res/sound/doorunlock.wav");
+        soundURL[4] = getClass().getResource("/res/sound/victory.wav");
 
     }
 
